@@ -1,0 +1,10 @@
+__pychache__/
+
+# Virtual envionment
+.venv/
+
+# IDE
+.idea/
+
+# Data
+chest_xray/
