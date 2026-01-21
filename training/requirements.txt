@@ -1,0 +1,12 @@
+fastapi
+mangum
+boto3
+pillow
+python-multipart
+
+# This tells pip to also search PyTorch’s CPU-only wheel repository, so it installs CPU builds of torch and torchvision
+# instead of CUDA ones. This saves means no CUDA / Triton downloads, which gives a much smaller image and allows for
+# a faster image build.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
