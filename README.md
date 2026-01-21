@@ -19,7 +19,7 @@ It covers:
    align="center">
     <td align="center">
       <img src="docs/architecture.jpg" width="700"><br>
-      <em>Architecture diagram generated with AI assistance (Gemini Banana Pro) based on my system design.</em>
+      <em><strong>Fig 1:</strong> Architecture diagram generated with AI assistance (Gemini Banana Pro) based on my system design.</em>
     </td>
 </p>
 
@@ -41,24 +41,17 @@ FastAPI is adapted to AWS Lambda using Mangum.
 The function is exposed via a Lambda Function URL, enabling direct HTTPS access without API Gateway.
 
 ### Swagger UI – Image Upload
-<table align="center">
-  <tr>
-    <td align="center">
-      <img src="docs/api/swagger_pneumonia_prediction_1.png" width="350"><br>
-      <em>Pneumonia prediction</em>
-    </td>
-    <td align="center">
-      <img src="docs/api/swagger_normal_prediction_1.png" width="350"><br>
-      <em>Normal prediction</em>
-    <td align="center">
-      <img src="docs/api/swagger_pneumonia_prediction_2.png" width="350"><br>
-      <em>Pneumonia prediction</em>
-    <td align="center">
-      <img src="docs/api/swagger_normal_prediction_2.png" width="350"><br>
-      <em>Normal prediction</em>
-    </td>
-  </tr>
-</table>
+
+<div align="center">
+  <img src="docs/api/swagger_normal_prediction_1.png" width="450" alt="Normal prediction" style="margin: 0 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+  <img src="docs/api/swagger_pneumonia_prediction_1.png" width="450" alt="Pneumonia prediction" style="margin: 0 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+  <br><br>
+  <em><strong>Fig 2:</strong> Side-by-side comparison of FastAPI <code>/predict</code> results for Normal vs. Pneumonia chest X-rays.</em>
+</div>
+
+
+
+
 
 
 ## Data Layer (Amazon S3)
