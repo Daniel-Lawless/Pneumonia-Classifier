@@ -179,24 +179,36 @@ This project has two parts:
 
 ### Setup
 ```bash
+# Clone repository
 git clone https://github.com/Daniel-Lawless/Pneumonia-Classifier-End-To-End.git
+# Move into Project root
 cd Pneumonia-Classifier-End-To-End
 
-python -m venv venv
+# Create a virtual environment
+python3 -m venv venv
+# Activate the Environment
 source venv/bin/activate   # Windows: venv\Scripts\activate
-
-pip install -r requirements.txt
+# Install dependencies
+pip install -r training/requirements.txt
 ````
 
 ### Model weights 
 
-Download the trained weights from GitHub Releases and place them where the app expects them:
+Download the trained weights from GitHub Releases and place them in the project root
+before copying them to the expected runtime location:
 
 macOS / Linux / WSL: 
 
 ```bash
-mkdir -p /tmp
-cp pneumonia_classifier.pth /tmp/model.pth
+# Downloads model weights from release. -L (follow redirects) -o (write to a file called pneumonia_classifier.pth)
+# followed by the release URL
+curl -L -o pneumonia_classifier.pth https://github.com/Daniel-Lawless/Pneumonia-Classifier-End-To-End/releases/download/v1.0.0/pneumonia_classifier.pth
+
+# Create /tmp folder in the current directory.
+mkdir -p ./tmp
+
+# Copy model weights to tmp folder, renames it to model.pth (Expected path in app.py)
+cp pneumonia_classifier.pth ./tmp/model.pth
 ```
 
 Windows (native Python):
@@ -208,6 +220,8 @@ copy .\pneumonia_classifier.pth C:\tmp\model.pth
 ### Run the API
 
 ```bash
+# Uvicorn hosts our Python code. Looks for app (FastAPI in our case) in Python file app. reload tells the server to reload
+# if some code is changed. We host it on port 8000.
 uvicorn app:app --reload --port 8000
 ```
 
